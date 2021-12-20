@@ -84,6 +84,33 @@ background-color: darkgoldenrod;
     font-size: 1.3em;
 }
 
+/* sx-down */
+
+.bar-sx-down {
+    width: 100%;
+    height: 70px;
+    background-color:firebrick;
+    display: flex;
+}
+
+.sx-down-sx {
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.sx-down-dx {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* inner-dx */
 .inner-dx{
     width: 70%;
