@@ -267,6 +267,45 @@ background-color: white;
 .messages {
     width: 100%;
     height: calc(100% - 120px);
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.bubble {
+    margin-top: 10px;
+    width: 40%;
+    height:fit-content;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bubble-txt {
+    margin-left: 5px;
+    height: 80%;
+    
+}
+
+.bubble-data {
+    font-size: 0.8em;
+    color: gray;
+    align-self:flex-end;
+
+}
+
+.my-message {
+    align-self: flex-end;
+    right: 0;
+    background-color: white;
+}
+
+.answer {
+    align-self: flex-start;
+    left: 0;
+    background-color: #D5F9BA;
 }
 
 /* bottom-bar-dx */
