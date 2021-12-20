@@ -313,5 +313,46 @@ background-color: white;
 .bottom-bar-dx {
     width: 100%;
     height: 60px;
-    background-color: coral;
+    background-color: #F3EEEA;
+    display: flex;
+}
+
+.bt-bar-sx {
+    height: 100%;
+    width: 10%;
+    /* background-color: green; */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.bt-bar-sx i,
+.bt-bar-dx i {
+    font-size: 1.8em;
+    align-self: center;
+}
+
+.bt-bar-center {
+    height: 100%;
+    width: 80%;
+    /* background-color: hotpink; */
+    display: flex;
+}
+
+.bt-bar-center input {
+    width: 98%;
+    height: 90%;
+    border-radius: 10px;
+    border: none;
+    margin: 0 auto;
+    align-self: center;
+}
+
+.bt-bar-dx {
+    height: 100%;
+    width: 10%;
+    /* background-color: limegreen; */
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
