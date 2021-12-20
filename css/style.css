@@ -47,7 +47,7 @@ ul li {
 .inner-sx{
 width: 30%;
 height: 100%;
-background-color: darkgoldenrod;
+background-color: white;
 }
 
 .bar-sx {
@@ -114,9 +114,12 @@ background-color: darkgoldenrod;
 
 /* search */
 .bar-sx-search {
+    width: 98%;
+    margin: 0 auto;
     height: 20px;
     background-color: white;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
+    border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
     display: flex;
@@ -149,7 +152,7 @@ background-color: darkgoldenrod;
     width: 98%;
     margin: 0 auto;
     height: calc(100% - 170px);
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     overflow-y: auto;
 }
 
@@ -157,6 +160,12 @@ background-color: darkgoldenrod;
     height: 60px;
     background-color: white;
     display: flex;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.contacts ul li:hover {
+    background-color: lightgray;
 }
 
 .contact-img {
