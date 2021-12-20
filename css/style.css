@@ -212,6 +212,52 @@ background-color: white;
     border-left: 1px solid lightgray;
     background-color: #EAEAEA;
     display: flex;
-    justify-content: space-between;
 }
 
+.bar-dx-img {
+    height: 100%;
+    width: 10%;
+    /* background-color: lightgreen; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar-dx-img img {
+    width: 45px;
+    border-radius: 50%;
+}
+
+
+
+.bar-dx-info{
+    height: 100%;
+    width: 80%;
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.last-access {
+    color: gray;
+    font-size: 0.9em;
+}
+
+.bar-dx-buttons{
+    height: 100%;
+    width: 10%;
+    /* background-color: teal; */
+}
+
+.bar-dx-buttons ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar-dx-buttons ul li {
+    margin-left: 8px;
+}
