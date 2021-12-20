@@ -39,6 +39,7 @@ ul li {
 .inner-container {
     width: 80%;
     height: 90%;
+    border: 1px solid lightgray;
     background-color: cyan;
     margin: auto;
     display: flex;
@@ -149,7 +150,7 @@ background-color: white;
 /* contacts */
 
 .contacts {
-    width: 98%;
+    width: 95%;
     margin: 0 auto;
     height: calc(100% - 170px);
     /* background-color: chartreuse; */
@@ -201,6 +202,16 @@ background-color: white;
 .inner-dx{
     width: 70%;
     height: 100%;
-    background-color:darkslateblue;
+    background-image: url(../img/mine.jpg);
+}
+
+.bar-dx {
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    border-left: 1px solid lightgray;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: space-between;
 }
 
