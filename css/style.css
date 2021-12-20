@@ -148,8 +148,9 @@ background-color: darkgoldenrod;
 .contacts {
     width: 98%;
     margin: 0 auto;
-    height: calc(100% - 160px);
+    height: calc(100% - 170px);
     background-color: chartreuse;
+    overflow-y: auto;
 }
 
 .contacts ul li {

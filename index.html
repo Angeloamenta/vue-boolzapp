@@ -53,13 +53,13 @@
                 <!-- contacts -->
                 <div class="contacts">
                     <ul>
-                        <li>
+                        <li v-for="(cont, index) in contacts">
                             <div class="contact-img">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="`img/avatar${cont.avatar}.jpg`" alt="">
                             </div>
                             <div class="cont-info">
                                 <div class="info-top">
-                                    <div class="name-cont">michele</div>
+                                    <div class="name-cont">{{cont.name}}</div>
                                     <div class="cont-date">10/10/2022</div>
                                 </div>
                                 <div class="info-bottom">
