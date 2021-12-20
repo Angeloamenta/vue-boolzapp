@@ -41,7 +41,7 @@ ul li {
     width: 80%;
     height: 90%;
     border: 1px solid lightgray;
-    background-color: cyan;
+    background-color: white;
     margin: auto;
     display: flex;
 }
@@ -292,14 +292,20 @@ background-color: #EDEDED;
     color: #B1B1B1;
 }
 /* messages */
-
-.messages {
+.try {
     width: 100%;
     height: calc(100% - 120px);
+    overflow-y: auto;
+}
+
+.messages {
+    width: 99%;
+    /* height: calc(100% - 120px); */
+    min-height: 100%;
     padding: 40px 60px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     background-image: url(../img/mine.jpg);
 }
 
