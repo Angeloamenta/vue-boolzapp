@@ -54,7 +54,7 @@ background-color: darkgoldenrod;
     width: 100%;
     height: 60px;
     padding: 0 10px;
-    background-color: darkviolet;
+    background-color: #EAEAEA;
     display: flex;
     justify-content: space-between;
 }
@@ -89,7 +89,7 @@ background-color: darkgoldenrod;
 .bar-sx-down {
     width: 100%;
     height: 70px;
-    background-color:firebrick;
+    background-color:#8EDAFC;
     display: flex;
 }
 
@@ -109,6 +109,33 @@ background-color: darkgoldenrod;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.bar-sx-search {
+    background-color: white;
+    margin-top: 5px;
+    display: flex;
+}
+
+.search-sx {
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-dx {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-dx input {
+    width: 100%;
+    border: none;
 }
 
 /* inner-dx */
