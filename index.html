@@ -70,10 +70,10 @@
                             <div class="cont-info">
                                 <div class="info-top">
                                     <div class="name-cont">{{cont.name}}</div>
-                                    <div class="cont-date">10/10/2022</div>
+                                    <div class="cont-date"> {{cont.messages[0].date}}</div>
                                 </div>
                                 <div class="info-bottom">
-                                    <div class="cont-last-mess">ok..</div>
+                                    <div class="cont-last-mess">{{cont.messages[1].text}}</div>
                                 </div>
                             </div>
                         </li>
@@ -102,18 +102,18 @@
                 <!-- messages -->
                 <div class="try">
                     <div class="messages">
-                        <div class="bubble answer">
-                            <div class="bubble-txt">La marianna va in campagna</div>
+                        <div v-for="(mex, index) in contacts.messages" class="bubble answer">
+                            <div class="bubble-txt">{{mex.text}}</div>
                             <div class="bubble-data">28/03/2020 16:15:22</div>
                         </div>
-                        <div class="bubble my-message">
+                        <!-- <div class="bubble my-message">
                             <div class="bubble-txt">Sicuro di non aver sbagliato chat?</div>
                             <div class="bubble-data">28/03/2020 16:15:22</div>
                         </div>
                         <div class="bubble answer">
                             <div class="bubble-txt">Ah scusa</div>
                             <div class="bubble-data">28/03/2020 16:15:22</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -123,7 +123,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="bt-bar-center">
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input v-model="message" type="text" placeholder="Scrivi un messaggio">
                     </div>
                     <div class="bt-bar-dx">
                         <i class="fa-solid fa-microphone"></i>
