@@ -102,8 +102,7 @@ var app = new Vue({
       select : function (index){
         this.cont = index;
         console.log(this.contacts[this.cont].visible);
-
-        this.contacts[this.cont].visible = false
+        // this.contacts[this.cont].visible = false
         console.log("cont",this.contacts[this.cont]);
       },
     
