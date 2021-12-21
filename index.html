@@ -102,9 +102,9 @@
                 <!-- messages -->
                 <div class="try">
                     <div class="messages">
-                        <div v-for="(mex, index) in contacts.messages" class="bubble answer">
+                        <div v-for="(mex, index) in contacts[0].messages" class="bubble" :class="(mex.status == 'sent') ? 'answer' : 'my-message' ">
                             <div class="bubble-txt">{{mex.text}}</div>
-                            <div class="bubble-data">28/03/2020 16:15:22</div>
+                            <div class="bubble-data">{{mex.date}}</div>
                         </div>
                         <!-- <div class="bubble my-message">
                             <div class="bubble-txt">Sicuro di non aver sbagliato chat?</div>
