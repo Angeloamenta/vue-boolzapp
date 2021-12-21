@@ -84,7 +84,8 @@
             <div class="inner-dx">
                 <!-- bar-dx -->
                 <div class="bar-dx">
-                    <div class="br-dx-info" v-for="(cnt, index) in contacts" v-if="(cont == index) ? 'contacts[count].visible == false' : '' ">
+                    <div class="br-dx-info" v-for="(cnt, index) in contacts" v-if="(cont == index)">
+                        <!-- ? 'contacts[count].visible == true' : ''  -->
                         <div class="bar-dx-img">
                             <img :src="`img/avatar${cnt.avatar}.jpg`" alt="">
                         </div>
