@@ -7,6 +7,8 @@ var app = new Vue({
     data: {
       messtype: "",
       messagex: "",
+      dates:"",
+      cont:"0",
       answer: "answer",
       
       contacts: [
@@ -107,18 +109,29 @@ var app = new Vue({
          let contatto = this.contacts[index].messages;
            console.log("prova", contatto);
            let messagee = [];
-
+           let date = [];
            for (let i = 0; i < contatto.length; i++) {
              const element = contatto[i];
              
              console.log("testo", element.text);
              messagee.push(element.text);
              this.messagex = messagee
-
+             date.push(element.date);
+             this.dates = date;
+             console.log(index);
            }
            console.log("prova", messagee);
+           console.log("date", date);
+            this.cont = index;
+           console.log(this.cont);
 
-      }
+          //  this.contacts[index].visible = false;
+      },
+      // filtronome : function (index) {
+      //   arrayfiltro = contacts.filter((contatto) => {
+      //     if (this.contacts.name ==)
+      //   })
+      // }
 
     }
     
