@@ -63,7 +63,7 @@
                 <!-- contacts -->
                 <div class="contacts">
                     <ul>
-                        <li v-for="(cont, index) in contacts">
+                        <li @click="select(index)" v-for="(cont, index) in contacts">
                             <div class="contact-img">
                                 <img :src="`img/avatar${cont.avatar}.jpg`" alt="">
                             </div>
@@ -103,7 +103,7 @@
                 <div class="try">
                     <div class="messages">
                         <div v-for="(mex, index) in contacts[0].messages" class="bubble" :class="(mex.status == 'sent') ? 'answer' : 'my-message' ">
-                            <div class="bubble-txt">{{mex.text}}</div>
+                            <div class="bubble-txt">{{messagex[index]}}</div>
                             <div class="bubble-data">{{mex.date}}</div>
                         </div>
                         <!-- <div class="bubble my-message">
@@ -123,7 +123,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="bt-bar-center">
-                        <input v-model="message" type="text" placeholder="Scrivi un messaggio">
+                        <input v-model="messtype" type="text" placeholder="Scrivi un messaggio">
                     </div>
                     <div class="bt-bar-dx">
                         <i class="fa-solid fa-microphone"></i>

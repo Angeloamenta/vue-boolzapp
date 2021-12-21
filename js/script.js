@@ -5,7 +5,8 @@
 var app = new Vue({
     el: '#app',
     data: {
-      message: "",
+      messtype: "",
+      messagex: "",
       answer: "answer",
       
       contacts: [
@@ -94,6 +95,31 @@ var app = new Vue({
           ],
         },
       ]
+    },
+    methods : {
+      select : function (index){
+        // userShow = this.contacts[index].messages[index].text;
+        // console.log("log",this.contacts[index].messages[index]);
+        // this.message = userShow
+        // console.log(userShow);
+
+        
+         let contatto = this.contacts[index].messages;
+           console.log("prova", contatto);
+           let messagee = [];
+
+           for (let i = 0; i < contatto.length; i++) {
+             const element = contatto[i];
+             
+             console.log("testo", element.text);
+             messagee.push(element.text);
+             this.messagex = messagee
+
+           }
+           console.log("prova", messagee);
+
+      }
+
     }
     
   })
