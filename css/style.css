@@ -277,6 +277,11 @@ background-color: #EDEDED;
     font-size: 0.9em;
 }
 
+.br-dx-info {
+        display: flex;
+        width: 90%;
+}
+
 .bar-dx-buttons{
     height: 100%;
     width: 10%;

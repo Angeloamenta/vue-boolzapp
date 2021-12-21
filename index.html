@@ -84,12 +84,14 @@
             <div class="inner-dx">
                 <!-- bar-dx -->
                 <div class="bar-dx">
-                    <div class="bar-dx-img">
-                        <img src="img/avatar_3.jpg" alt="">
-                    </div>
-                    <div class="bar-dx-info">
-                        <div class="name-selected"><h4>Nome</h4></div>
-                        <div class="last-access">Ultimo accesso oggi alle 28/03/2020 16:15:22</div>
+                    <div class="br-dx-info" v-for="(cnt, index) in contacts" v-if="contacts[index].visible == false" >
+                        <div class="bar-dx-img">
+                            <img :src="`img/avatar${cnt.avatar}.jpg`" alt="">
+                        </div>
+                        <div class="bar-dx-info">
+                            <div class="name-selected"><h4>{{cnt.name}}</h4></div>
+                            <div class="last-access">Ultimo accesso oggi alle 28/03/2020 16:15:22</div>
+                        </div>
                     </div>
                     <div class="bar-dx-buttons">
                         <ul>
