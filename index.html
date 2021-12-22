@@ -112,8 +112,8 @@
                         <div  v-for="(mex, index) in contacts[cont].messages" class="bubble" :class="(mex.status == 'sent') ? 'my-message' : 'answer' ">
                             <div class="bubble-txt">{{mex.text}}</div>
                             <div class="menu-mini">
-                                <i @click="showMenu(cont)" class="fa-solid fa-angle-down">
-                                    <div class="menu-m" :class="(menu == false) ? 'none' : '' ">
+                                <i @click="showMenu(index)" class="fa-solid fa-angle-down">
+                                    <div class="menu-m" :class="{ none: contacts[index].visible }">
                                         <div>Message Info</div>
                                         <div  @click="deleteThis(index)" class="delete">Delete Message</div>
                                     </div>

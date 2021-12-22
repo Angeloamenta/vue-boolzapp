@@ -149,13 +149,19 @@ var app = new Vue({
       this.contacts[this.cont].messages.splice(index, 1);
     },
     
-    showMenu : function () {
-      console.log("ciao");
-      if (this.menu == false) {
-        this.menu = true
-      }else {
-        this.menu = false
-      }
+    showMenu : function (index) {
+      console.log(index);
+      console.log("vero-falso", this.contacts[index].visible);
+
+      // if (this.contacts[index].visible = true) {
+
+      //   this.contacts[index].visible = false
+        
+      // }else if (this.contacts[index].visible = false) {
+      //   console.log("cancello");
+      //   this.contacts[index].visible = true
+      // }
+      this.contacts[index].visible = !this.contacts[index].visible
     }
     },
 
