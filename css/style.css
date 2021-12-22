@@ -341,9 +341,23 @@ background-color: #EDEDED;
     font-size: 0.8em;
     color: gray;
     align-self:flex-end;
+    margin-right: 30px;
 
 }
 
+.menu-mini {
+    align-self:flex-end;
+    position: relative;
+}
+
+.menu-m {
+    position: absolute;
+    top: 17px;
+    left: -83px;
+    width: 100px;
+    height: 60px;
+    background-color: gray;
+}
 .my-message {
     align-self: flex-end;
     right: 0;

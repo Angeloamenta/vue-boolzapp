@@ -5,6 +5,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+      searchcontact: "",
       messtype: "",
       message: "",
       dates:"",
@@ -141,12 +142,20 @@ var app = new Vue({
       
         this.message= ""
     },
+
+    // searchContact : function () {
+
+    // }
     
     },
-    ccreated() {
-
+    
+    created() {
       
-  
+      let numbero = this.contacts.filter((element) => {
+        return element < 2;
+      });
+      
+     
     }
     
   })

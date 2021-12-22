@@ -58,7 +58,10 @@
                 <!-- barra search -->
                 <div class="bar-sx-search">
                     <div class="search-sx"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <div class="search-dx"><input type="text" placeholder="Cerca o inizia una nuova chat"></div>
+                    <div class="search-dx">
+
+                        <input v-model="searchcontact" type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
                 </div>
                 <!-- contacts -->
                 <div class="contacts">
@@ -108,6 +111,11 @@
                         <!-- v-if="contacts[index].visible == true" -->
                         <div  v-for="(mex, index) in contacts[cont].messages" class="bubble" :class="(mex.status == 'sent') ? 'my-message' : 'answer' ">
                             <div class="bubble-txt">{{mex.text}}</div>
+                            <div class="menu-mini">
+                                <i class="fa-solid fa-angle-down">
+                                    <div class="menu-m"></div>
+                                </i>
+                            </div>
                             <div class="bubble-data">{{mex.date}}</div>
                         </div>
                         <!-- <div class="bubble my-message">
