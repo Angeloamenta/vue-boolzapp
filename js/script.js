@@ -5,6 +5,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+      contattotemporaneo : [],
       menu: false,
       searchcontact: "",
       messtype: "",
@@ -162,15 +163,28 @@ var app = new Vue({
       //   this.contacts[index].visible = true
       // }
       this.contacts[index].visible = !this.contacts[index].visible
-    }
     },
+    
+
+    // funzione creta inutilmente -.-
+    // filtrocontatti : function (){
+    //  let contattotemporaneo = this.contacts.filter((contatto) => { 
+    //     if (contatto.name = this.searchcontact) {
+    //       return true;
+    //     } else {
+    //       return false;
+    //     }
+    //   })
+    //   console.log(contattotemporaneo);
+    // }
+     },
 
     
     created() {
       
-      let numbero = this.contacts.filter((element) => {
-        return element < 2;
-      });
+
+      
+      
       
      
     }
