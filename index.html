@@ -73,10 +73,12 @@
                             <div class="cont-info">
                                 <div class="info-top">
                                     <div class="name-cont">{{contt.name}}</div>
-                                    <div class="cont-date"> {{contt.messages[contt.messages.length - 1].date}}</div>
+                                    <div v-if="contt.messages.length > 0" class="cont-date"> {{contt.messages[contt.messages.length - 1].date}}</div>
+                                    <div v-else> </div>
                                 </div>
                                 <div class="info-bottom">
-                                    <div class="cont-last-mess">{{contt.messages[contt.messages.length - 1].text}}</div>
+                                    <div v-if="contt.messages.length > 0" class="cont-last-mess">{{contt.messages[contt.messages.length - 1].text}}</div>
+                                    <div v-else> </div>
                                 </div>
                             </div>
                         </li>
