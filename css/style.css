@@ -354,11 +354,16 @@ background-color: #EDEDED;
     position: absolute;
     top: 17px;
     left: -83px;
-    width: 100px;
-    height: 60px;
+    width: 150px;
+    height: 100px;
     background-color: lightgray;
-    font-size: 0.6em;
+    font-size: 0.8em;
     padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .my-message {
     align-self: flex-end;
@@ -366,8 +371,16 @@ background-color: #EDEDED;
     background-color: white;
 }
 
-.delete {
-    margin-top: 8px;
+.menu-m > li {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-m > li:hover {
+    background-color: gray;
 }
 
 .answer {

@@ -146,7 +146,7 @@ var app = new Vue({
 
     deleteThis : function (index) {
       console.log("ciao");
-      this.contacts[this.cont].messages.splice(index, 1);
+      this.contacts[this.cont].messages.splice(index);
     },
     
     showMenu : function (index) {
