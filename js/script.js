@@ -111,23 +111,26 @@ var app = new Vue({
     invio : function () {
       console.log(this.message);
       let testomex = this.contacts[this.cont].messages;
-      var today = new Date();
+      let today = new Date();
 
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
 
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-        var dateTime = date+' '+time;
+        let dateTime = date+' '+time;
+
       let obj = {
         date: dateTime,
               text: this.message,
               status: "sent",
       }
+
       testomex.push(obj)
 
         if (this.message.length > 0) {
           this.timer = setTimeout(function() {
           let objt = {
+
             date: dateTime,
                   text: "si, ok",
                   status: "recived",
