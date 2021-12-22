@@ -8,6 +8,7 @@ var app = new Vue({
       messtype: "",
       message: "",
       dates:"",
+      lastmessage:"",
       cont:"0",
       answer: "answer",
       
@@ -99,6 +100,7 @@ var app = new Vue({
       ]
     },
     methods : {
+
       select : function (index){
         this.cont = index;
         console.log(this.contacts[this.cont].visible);
@@ -115,10 +117,7 @@ var app = new Vue({
               status: "sent",
       }
       testomex.push(obj)
-      
-      console.log(testomex);
-      
-        
+
         if (this.message.length > 0) {
           this.timer = setTimeout(function() {
           let objt = {
@@ -131,7 +130,13 @@ var app = new Vue({
         }
       
         this.message= ""
-    }
+    },
+    
+    },
+    ccreated() {
+
+      
+  
     }
     
   })
