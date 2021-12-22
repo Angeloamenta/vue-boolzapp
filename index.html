@@ -96,7 +96,7 @@
                         </div>
                         <div class="bar-dx-info">
                             <div class="name-selected"><h4>{{cnt.name}}</h4></div>
-                            <div class="last-access">Ultimo accesso {{cnt.messages[cnt.messages.length - 1].date}}</div>
+                            <div v-if="cnt.messages.length > 0" class="last-access">Ultimo accesso {{cnt.messages[cnt.messages.length - 1].date}}</div>
                         </div>
                         </div>
                     <div class="bar-dx-buttons">
