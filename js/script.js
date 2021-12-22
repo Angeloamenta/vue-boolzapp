@@ -106,39 +106,35 @@ var app = new Vue({
 
     select : function (index){
       this.cont = index;
-      console.log(this.contacts[this.cont].visible);
-      // this.contacts[this.cont].visible = false
-      console.log("cont",this.contacts[this.cont]);
     },
 
   invio : function () {
-    console.log(this.message);
     let testomex = this.contacts[this.cont].messages;
     let today = new Date();
-
       let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-
       let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
       let dateTime = date+' '+time;
 
-    let obj = {
+    let obj = 
+    {
       date: dateTime,
-            text: this.message,
-            status: "sent",
+      text: this.message,
+      status: "sent",
     }
 
     testomex.push(obj)
 
-      if (this.message.length > 0) {
-        this.timer = setTimeout(function() {
-        let objt = {
-
+    if (this.message.length > 0) {
+      this.timer = setTimeout(function() {
+        let objt = 
+        {
           date: dateTime,
-                text: "si, ok",
-                status: "recived",
+          text: "si, ok",
+          status: "recived",
         }
-        testomex.push(objt)
+
+       testomex.push(objt)
+       
       }, 3000);
       }
     
