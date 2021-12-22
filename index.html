@@ -66,13 +66,13 @@
                 <!-- contacts -->
                 <div class="contacts">
                     <ul>
-                        <li v-if="contt.name.includes(searchcontact)" @click="select(index)" v-for="(contt, index) in contacts">
+                        <li v-if="contt.name.toLowerCase().includes(searchcontact)" @click="select(index)" v-for="(contt, index) in contacts">
                             <div class="contact-img">
                                 <img :src="`img/avatar${contt.avatar}.jpg`" alt="">
                             </div>
                             <div class="cont-info">
                                 <div class="info-top">
-                                    <div class="name-cont">{{contt.name}}</div>
+                                    <div class="name-cont">{{contt.name}}.</div>
                                     <div v-if="contt.messages.length > 0" class="cont-date"> {{contt.messages[contt.messages.length - 1].date}}</div>
                                     <div v-else> </div>
                                 </div>
