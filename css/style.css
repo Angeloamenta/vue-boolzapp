@@ -356,12 +356,18 @@ background-color: #EDEDED;
     left: -83px;
     width: 100px;
     height: 60px;
-    background-color: gray;
+    background-color: lightgray;
+    font-size: 0.6em;
+    padding: 8px;
 }
 .my-message {
     align-self: flex-end;
     right: 0;
     background-color: white;
+}
+
+.delete {
+    margin-top: 8px;
 }
 
 .answer {
@@ -386,6 +392,10 @@ background-color: #EDEDED;
     display: flex;
     align-content: center;
     justify-content: center;
+}
+
+.none {
+    display: none;
 }
 
 .bt-bar-sx i,

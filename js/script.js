@@ -5,6 +5,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+      menu: false,
       searchcontact: "",
       messtype: "",
       message: "",
@@ -143,11 +144,21 @@ var app = new Vue({
         this.message= ""
     },
 
-    // searchContact : function () {
-
-    // }
-    
+    deleteThis : function (index) {
+      console.log("ciao");
+      this.contacts[this.cont].messages.splice(index, 1);
     },
+    
+    showMenu : function () {
+      console.log("ciao");
+      if (this.menu == false) {
+        this.menu = true
+      }else {
+        this.menu = false
+      }
+    }
+    },
+
     
     created() {
       
