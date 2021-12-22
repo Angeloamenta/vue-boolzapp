@@ -6,7 +6,7 @@ var app = new Vue({
     el: '#app',
     data: {
       messtype: "",
-      messagex: "",
+      message: "",
       dates:"",
       cont:"0",
       answer: "answer",
@@ -105,7 +105,33 @@ var app = new Vue({
         // this.contacts[this.cont].visible = false
         console.log("cont",this.contacts[this.cont]);
       },
-    
+
+    invio : function () {
+      console.log(this.message);
+      let testomex = this.contacts[this.cont].messages;
+      let obj = {
+        date: "10/01/2020 15:50:00",
+              text: this.message,
+              status: "sent",
+      }
+      testomex.push(obj)
+      
+      console.log(testomex);
+      
+        
+        if (this.message.length > 0) {
+          this.timer = setTimeout(function() {
+          let objt = {
+            date: "10/01/2020 15:50:00",
+                  text: "si, ok",
+                  status: "recived",
+          }
+          testomex.push(objt)
+        }, 3000);
+        }
+      
+        this.message= ""
+    }
     }
     
   })

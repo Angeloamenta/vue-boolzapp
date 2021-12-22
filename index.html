@@ -63,17 +63,17 @@
                 <!-- contacts -->
                 <div class="contacts">
                     <ul>
-                        <li @click="select(index)" v-for="(cont, index) in contacts">
+                        <li @click="select(index)" v-for="(contt, index) in contacts">
                             <div class="contact-img">
-                                <img :src="`img/avatar${cont.avatar}.jpg`" alt="">
+                                <img :src="`img/avatar${contt.avatar}.jpg`" alt="">
                             </div>
                             <div class="cont-info">
                                 <div class="info-top">
-                                    <div class="name-cont">{{cont.name}}</div>
-                                    <div class="cont-date"> {{cont.messages[0].date}}</div>
+                                    <div class="name-cont">{{contt.name}}</div>
+                                    <div class="cont-date"> {{contt.messages[contt.messages.length - 1].date}}</div>
                                 </div>
                                 <div class="info-bottom">
-                                    <div class="cont-last-mess">{{cont.messages[1].text}}</div>
+                                    <div class="cont-last-mess">{{contt.messages[contt.messages.length - 1].text}}</div>
                                 </div>
                             </div>
                         </li>
@@ -127,7 +127,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="bt-bar-center">
-                        <input v-model="messtype" type="text" placeholder="Scrivi un messaggio">
+                        <input v-on:keyup.enter="invio" v-model="message" type="text" placeholder="Scrivi un messaggio">
                     </div>
                     <div class="bt-bar-dx">
                         <i class="fa-solid fa-microphone"></i>
