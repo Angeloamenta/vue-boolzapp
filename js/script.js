@@ -14,7 +14,7 @@ var app = new Vue({
     lastmessage:"",
     cont:"0",
     answer: "answer",
-    
+    currentmessage : null,
     contacts: [
       {
         name: "Michele",
@@ -144,12 +144,14 @@ var app = new Vue({
   deleteThis : function (index) {
     console.log("ciao");
     this.contacts[this.cont].messages.splice(index, 1);
+    
   },
   
-  showMenu : function (index) {
-    console.log(index);
-    console.log("vero-falso", this.contacts[index].visible);
+  deleteAll : function () {
+    this.contacts[this.cont].messages.splice(0, this.contacts[this.cont].messages.length);
+  },
 
+  showMenu : function (index) {
     // if (this.contacts[index].visible = true) {
 
     //   this.contacts[index].visible = false
@@ -158,21 +160,18 @@ var app = new Vue({
     //   console.log("cancello");
     //   this.contacts[index].visible = true
     // }
-    this.contacts[index].visible = !this.contacts[index].visible
+    // console.log(index);
+    //  this.contacts[this.cont].visible = !this.contacts[this.cont].visible
+    this.currentmessage = index;
+    console.log(index);
   },
   
-
-  // funzione creta inutilmente -.-
-  // filtrocontatti : function (){
-  //  let contattotemporaneo = this.contacts.filter((contatto) => { 
-  //     if (contatto.name = this.searchcontact) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   })
-  //   console.log(contattotemporaneo);
-  // }
+  hideMenu : function (index) {
+    this.currentmessage = index;
+      this.currentmessage = null
+    },
+  
+  
    },
 
   
