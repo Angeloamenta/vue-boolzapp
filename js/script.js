@@ -5,6 +5,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    mode: false,
     showw: true,
     array1: [],
     array2: [],
@@ -201,7 +202,7 @@ var app = new Vue({
       pingu2.push(obb)
       
       
-    }, 0000);
+    }, 4000);
     
     
     console.log(this.cont);

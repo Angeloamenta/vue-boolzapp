@@ -28,26 +28,27 @@
             <div class="beige"></div>
         </div>
         <!-- inner-container -->
-        <div class="inner-container">
+        <div :class="{ darkmode : mode }" class="inner-container">
              <div class="splash" v-if="array2.length == 0">
                  <h1>BoolzApp <i class="fa-solid fa-paper-plane"></i></h1>
                 <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             </div> 
             <!-- sx -->
-            <div class="inner-sx">
+            <div :class="{ darkmode : mode }" class="inner-sx">
                 <!-- barra sx -->
-                <div class="bar-sx">
+                <div :class="{ darkmode : mode }" class="bar-sx">
                     <div class="bar-sx-sx"><img src="img/avatar_io.jpg" alt=""> nome utente</div>
                     <div class="bar-sx-dx">
                         <ul>
-                            <li><i class="fa-solid fa-arrow-rotate-left"></i></li>
+                            <li v-show="mode"><i @click="mode = !mode" class="fa-solid fa-toggle-off"></i></li>
+                            <li v-show="!mode"><i @click="mode = !mode" class="fa-solid fa-toggle-on"></i></li>
                             <li><i class="fa-solid fa-message"></i></li>
                             <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
                         </ul>
                     </div>
                 </div>
                 <!-- barra down sx -->
-                <div class="bar-sx-down">
+                <div :class="{ darkmode : mode }" class="bar-sx-down">
                     <div class="sx-down-sx">
                         <div class="bell">
                             <i class="fa-solid fa-bell-slash"></i>
@@ -60,21 +61,21 @@
                     </div>
                 </div>
                 <!-- barra search -->
-                <div class="bar-sx-search">
+                <div :class="{ darkmode : mode }" class="bar-sx-search">
                     <div class="search-sx"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <div class="search-dx">
 
-                        <input v-model="searchcontact" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input :class="{ darkmode : mode }" v-model="searchcontact" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
                 <!-- contacts -->
                 <div class="contacts">
                     <ul>
                         <li v-if="contt.name.toLowerCase().includes(searchcontact)" @click="select(index)" v-for="(contt, index) in contacts">
-                            <div class="contact-img">
+                            <div :class="{ darkmode : mode }" class="contact-img">
                                 <img :src="`img/avatar${contt.avatar}.jpg`" alt="">
                             </div>
-                            <div class="cont-info">
+                            <div :class="{ darkmode : mode }" class="cont-info">
                                 <div class="info-top">
                                     <div class="name-cont">{{contt.name}}</div>
                                     <div v-if="contt.messages.length > 0" class="cont-date"> {{contt.messages[contt.messages.length - 1].date}}</div>
@@ -90,9 +91,9 @@
                 </div>
             </div>
             <!-- dx -->
-            <div class="inner-dx">
+            <div :class="{ darkmode : mode }" class="inner-dx">
                 <!-- bar-dx -->
-                <div class="bar-dx">
+                <div :class="{ darkmode : mode }" class="bar-dx">
                     <div class="br-dx-info" v-for="(cnt, index) in contacts" v-if="(cont == index)">
                         <!-- ? 'contacts[count].visible == true' : ''  -->
                         <div class="bar-dx-img">
@@ -120,12 +121,12 @@
                     </div>
                 </div>
                 <!-- messages -->
-                <div class="try">
+                <div :class="{ darkmode : mode }" class="try">
                     <div  v-if="cont == null" class="welcome">
                        <h2> BoolzApp <i class="fa-solid fa-paper-plane"></i></h2>
                        <p>Seleziona la tua chat</p>   
                     </div>
-                    <div v-else class="messages">
+                    <div :class="{ darkmode : mode }" v-else class="messages">
                         <!-- v-if="contacts[index].visible == true" -->
                         <div 
                          v-for="(mex, index) in contacts[cont].messages" 
@@ -133,10 +134,9 @@
                          class="bubble" 
                          :class="(mex.status == 'sent') ? 'my-message' : 'answer' "
                          >
-                            <div class="bubble-txt">{{mex.text}}</div>
+                            <div :class="{ darktext : mode }" class="bubble-txt">{{mex.text}}</div>
                             <div class="menu-mini">
                                 <i @mouseover="showMenu(index)" @mouseleave="hideMenu(index)" @click="hideMenu" class="fa-solid fa-angle-down">
-                                    
                                     <ul class="menu-m" :class="(index == currentmessage ? '' : 'none')">
                                         <li>Message Info</li>
                                         <li  @click="deleteThis(index)" class="delete">Delete Message</li>
@@ -145,20 +145,12 @@
                             </div>
                             <div class="bubble-data">{{mex.date}}</div>
                         </div>
-                        <!-- <div class="bubble my-message">
-                            <div class="bubble-txt">Sicuro di non aver sbagliato chat?</div>
-                            <div class="bubble-data">28/03/2020 16:15:22</div>
-                        </div>
-                        <div class="bubble answer">
-                            <div class="bubble-txt">Ah scusa</div>
-                            <div class="bubble-data">28/03/2020 16:15:22</div>
-                        </div> -->
                     </div>
                     
                 </div>
 
                 <!-- bottom-bar-dx -->
-                <div class="bottom-bar-dx">
+                <div :class="{ darkmode : mode }" class="bottom-bar-dx">
                     <div class="bt-bar-sx">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>

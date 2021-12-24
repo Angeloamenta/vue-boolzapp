@@ -505,6 +505,15 @@ background-color: #EDEDED;
 .none {
     display: none;
 }
+
+.darkmode {
+    background-color: rgb(44, 41, 41);
+    color: white;
+}
+
+.darktext {
+    color: black;
+}
 /* animation loading */
 .lds-roller {
     display: inline-block;
