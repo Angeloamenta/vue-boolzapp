@@ -29,6 +29,10 @@
         </div>
         <!-- inner-container -->
         <div class="inner-container">
+             <div class="splash" v-if="array2.length == 0">
+                 <h1>BoolzApp <i class="fa-solid fa-paper-plane"></i></h1>
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div> 
             <!-- sx -->
             <div class="inner-sx">
                 <!-- barra sx -->
@@ -94,27 +98,45 @@
                         <div class="bar-dx-img">
                             <img :src="`img/avatar${cnt.avatar}.jpg`" alt="">
                         </div>
-                        <div class="bar-dx-info">
+                        <div v-if="contacts[cont].messages.length > 0" class="bar-dx-info">
                             <div class="name-selected"><h4>{{cnt.name}}</h4></div>
-                            <div v-if="cnt.messages.length > 0" class="last-access">Ultimo accesso {{cnt.messages[cnt.messages.length - 1].date}}</div>
+                            <div v-if="array1.length > 0" class="last-access">sta scrivendo...</div>
+                            <div v-else class="last-access">Ultimo accesso {{cnt.messages[cnt.messages.length - 1].date}}</div>
                         </div>
+                        <div v-else></div>
                     </div>
                     <div class="bar-dx-buttons">
-                        <ul>
+                        <ul class="dx-list">
                             <li><i class="fa-solid fa-magnifying-glass"></i></li>
                             <li><i class="fa-solid fa-paperclip"></i></li>
-                            <li @click="deleteAll"><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                            <li ><i class="fa-solid fa-ellipsis-vertical"@click="showw = !showw" ></i>
+
+                            <ul  :class="{ none : showw }" class="dropdown">
+                                <li @click="chiudiChat">Chiudi Chat</li>
+                                <li @click="deleteAll">Cancella Chat</li>
+                            </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <!-- messages -->
                 <div class="try">
-                    <div class="messages">
+                    <div  v-if="cont == null" class="welcome">
+                       <h2> BoolzApp <i class="fa-solid fa-paper-plane"></i></h2>
+                       <p>Seleziona la tua chat</p>   
+                    </div>
+                    <div v-else class="messages">
                         <!-- v-if="contacts[index].visible == true" -->
-                        <div  v-for="(mex, index) in contacts[cont].messages" class="bubble" :class="(mex.status == 'sent') ? 'my-message' : 'answer' ">
+                        <div 
+                         v-for="(mex, index) in contacts[cont].messages" 
+                         
+                         class="bubble" 
+                         :class="(mex.status == 'sent') ? 'my-message' : 'answer' "
+                         >
                             <div class="bubble-txt">{{mex.text}}</div>
                             <div class="menu-mini">
                                 <i @mouseover="showMenu(index)" @mouseleave="hideMenu(index)" @click="hideMenu" class="fa-solid fa-angle-down">
+                                    
                                     <ul class="menu-m" :class="(index == currentmessage ? '' : 'none')">
                                         <li>Message Info</li>
                                         <li  @click="deleteThis(index)" class="delete">Delete Message</li>
@@ -132,6 +154,7 @@
                             <div class="bubble-data">28/03/2020 16:15:22</div>
                         </div> -->
                     </div>
+                    
                 </div>
 
                 <!-- bottom-bar-dx -->
@@ -140,7 +163,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="bt-bar-center">
-                        <input v-on:keyup.enter="invio" v-model="message" type="text" placeholder="Scrivi un messaggio">
+                        <input v-on:keydown.enter="invio" v-on:keyup.enter="stascrivendo" v-model="message" type="text" placeholder="Scrivi un messaggio">
                     </div>
                     <div class="bt-bar-dx">
                         <i v-if="message.length > 0" @click="invio" class="fa-solid fa-paper-plane"></i>

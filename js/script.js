@@ -5,14 +5,18 @@
 var app = new Vue({
   el: '#app',
   data: {
-    contattotemporaneo : [],
+    showw: true,
+    array1: [],
+    array2: [],
+    timers: 0,
+    splash: true,
     menu: false,
     searchcontact: "",
     messtype: "",
     message: "",
     dates:"",
     lastmessage:"",
-    cont:"0",
+    cont: null,
     answer: "answer",
     currentmessage : null,
     contacts: [
@@ -121,24 +125,42 @@ var app = new Vue({
       text: this.message,
       status: "sent",
     }
-
     testomex.push(obj)
 
+    this.array1.push(obj)
+
+    
+    
+    console.log("1",this.timers);
     if (this.message.length > 0) {
+      let pingu = this.array1
       this.timer = setTimeout(function() {
+        
         let objt = 
         {
           date: dateTime,
           text: "si, ok",
           status: "recived",
         }
-
+        
+        console.log("2", this.timers);
        testomex.push(objt)
-       
+       pingu.pop(obj)
       }, 3000);
       }
-    
-      this.message= ""
+       console.log("3", this.timers);
+      this.message= "";
+
+      
+  },
+
+  stascrivendo : function () {
+    this.timer = setTimeout (function () {
+      console.log("ciao");
+      console.log("null",this.timers);
+      this.timers = 0;
+      
+    }, 4000);
   },
 
   deleteThis : function (index) {
@@ -152,16 +174,7 @@ var app = new Vue({
   },
 
   showMenu : function (index) {
-    // if (this.contacts[index].visible = true) {
 
-    //   this.contacts[index].visible = false
-      
-    // }else if (this.contacts[index].visible = false) {
-    //   console.log("cancello");
-    //   this.contacts[index].visible = true
-    // }
-    // console.log(index);
-    //  this.contacts[this.cont].visible = !this.contacts[this.cont].visible
     this.currentmessage = index;
     console.log(index);
   },
@@ -171,16 +184,27 @@ var app = new Vue({
       this.currentmessage = null
     },
   
+    chiudiChat : function () {
+      this.cont= null;
+      this.showw = true
+    }
   
    },
 
   
   created() {
+    console.log(this.splash);
+    let pingu2 = this.array2
+    let obb = {}
+    this.timer = setTimeout (function () {
+      console.log("splash");
+      pingu2.push(obb)
+      
+      
+    }, 0000);
     
-
     
-    
-    
+    console.log(this.cont);
    
   }
   
