@@ -21,7 +21,7 @@
 </head>
 <body>
     <!-- container -->
-    <div id="app" class="container">
+    <div :class="{ fontplus : zoom }" id="app" class="container">
         <!-- wall -->
          <div class="wall">
             <div class="green"></div>
@@ -42,7 +42,8 @@
                         <ul>
                             <li v-show="mode"><i @click="mode = !mode" class="fa-solid fa-toggle-off"></i></li>
                             <li v-show="!mode"><i @click="mode = !mode" class="fa-solid fa-toggle-on"></i></li>
-                            <li><i class="fa-solid fa-message"></i></li>
+                            <li v-show="!zoom" @click="zoom = !zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></li>
+                            <li v-show="zoom" @click="zoom = !zoom"><i class="fa-solid fa-magnifying-glass-minus"></i></li>
                             <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
                         </ul>
                     </div>

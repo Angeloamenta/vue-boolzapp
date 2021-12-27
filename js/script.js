@@ -5,6 +5,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    zoom: false,
     arrayRisposte: ["va bene", "come preferisci", "no, grazie", "direi di no"],
     mode: false,
     showw: true,
