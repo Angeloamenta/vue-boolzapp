@@ -121,7 +121,10 @@ var app = new Vue({
       console.log("scrivi");
     }else {
       let arrayq = this.arrayRisposte;
-      let random = Math.floor((Math.random() * arrayq.length) + 1);
+      console.log("risposte", arrayq);
+      let random = Math.floor((Math.random() * arrayq.length -1) + 1);
+      console.log("random", random);
+      console.log("random-array", arrayq[random]);
       let testomex = this.contacts[this.cont].messages;
       let today = new Date();
         let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
