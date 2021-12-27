@@ -368,8 +368,8 @@ background-color: #EDEDED;
     left: -83px;
     width: 150px;
     height: 100px;
-    background-color: lightgray;
-    font-size: 0.8em;
+    background-color: white;
+    font-size: 0.9em;
     padding: 8px;
     cursor: pointer;
     display: flex;
@@ -490,7 +490,7 @@ background-color: #EDEDED;
     align-items: center;
     background-color: white;
     cursor: pointer;
-    
+    z-index: 999;
 }
 
 .dropdown li {
