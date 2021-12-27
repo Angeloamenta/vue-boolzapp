@@ -114,43 +114,49 @@ var app = new Vue({
     },
 
   invio : function () {
-    let testomex = this.contacts[this.cont].messages;
-    let today = new Date();
-      let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
-      let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      let dateTime = date+' '+time;
 
-    let obj = 
-    {
-      date: dateTime,
-      text: this.message,
-      status: "sent",
-    }
-    testomex.push(obj)
+    if (this.message.trim().length <= 0 || this.cont == null) {
+      console.log("scrivi");
+    }else {
 
-    this.array1.push(obj)
-
-    
-    
-    console.log("1",this.timers);
-    if (this.message.length > 0) {
-      let pingu = this.array1
-      this.timer = setTimeout(function() {
-        
-        let objt = 
-        {
-          date: dateTime,
-          text: "si, ok",
-          status: "recived",
-        }
-        
-        console.log("2", this.timers);
-       testomex.push(objt)
-       pingu.pop(obj)
-      }, 3000);
+      let testomex = this.contacts[this.cont].messages;
+      let today = new Date();
+        let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+        let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let dateTime = date+' '+time;
+  
+      let obj = 
+      {
+        date: dateTime,
+        text: this.message,
+        status: "sent",
       }
-       console.log("3", this.timers);
-      this.message= "";
+      testomex.push(obj)
+  
+      this.array1.push(obj)
+  
+      
+      
+      console.log("1",this.timers);
+      if (this.message.length > 0) {
+        let pingu = this.array1
+        this.timer = setTimeout(function() {
+          
+          let objt = 
+          {
+            date: dateTime,
+            text: "si, ok",
+            status: "recived",
+          }
+          
+          console.log("2", this.timers);
+         testomex.push(objt)
+         pingu.pop(obj)
+        }, 3000);
+        }
+         console.log("3", this.timers);
+        this.message= "";
+    }
 
       
   },
@@ -202,7 +208,7 @@ var app = new Vue({
       pingu2.push(obb)
       
       
-    }, 4000);
+    }, 0000);
     
     
     console.log(this.cont);

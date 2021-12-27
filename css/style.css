@@ -498,6 +498,11 @@ background-color: #EDEDED;
 
 }
 
+.dropdown ul {
+    width: 100%;
+    height: 100%;
+}
+
 .dropdown li:hover{
     background-color: lightslategray;
 }
