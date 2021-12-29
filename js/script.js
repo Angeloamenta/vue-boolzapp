@@ -122,7 +122,7 @@ var app = new Vue({
     }else {
       let arrayq = this.arrayRisposte;
       console.log("risposte", arrayq);
-      let random = Math.floor((Math.random() * arrayq.length -1) + 1);
+      let random = Math.floor((Math.random() * arrayq.length) + 1);
       console.log("random", random);
       console.log("random-array", arrayq[random]);
       let testomex = this.contacts[this.cont].messages;
@@ -145,7 +145,7 @@ var app = new Vue({
       
       console.log("1",this.timers);
       if (this.message.length > 0) {
-        let pingu = this.array1
+        let arrayWriting = this.array1
         this.timer = setTimeout(function() {
           
           let objt = 
@@ -157,7 +157,7 @@ var app = new Vue({
           
           console.log("2", this.timers);
          testomex.push(objt)
-         pingu.pop(obj)
+         arrayWriting.pop(obj)
         }, 3000);
         }
          console.log("3", this.timers);
@@ -207,11 +207,11 @@ var app = new Vue({
   
   created() {
     console.log(this.splash);
-    let pingu2 = this.array2
+    let arraySlpash = this.array2
     let obb = {}
     this.timer = setTimeout (function () {
       console.log("splash");
-      pingu2.push(obb)
+      arraySlpash.push(obb)
       
       
     }, 0000);
