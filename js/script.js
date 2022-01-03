@@ -200,6 +200,10 @@ var app = new Vue({
     chiudiChat : function () {
       this.cont= null;
       this.showw = true
+    },
+
+    hideShoww : function () {
+      this.showw = true
     }
   
    },

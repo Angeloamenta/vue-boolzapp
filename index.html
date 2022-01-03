@@ -113,7 +113,7 @@
                             <li><i class="fa-solid fa-paperclip"></i></li>
                             <li ><i class="fa-solid fa-ellipsis-vertical"@click="showw = !showw" ></i>
                             <div :class="{ none : showw }" class="dropdown">
-                                <ul :class="{ darkmode : mode }">
+                                <ul @mouseleave="hideShoww" :class="{ darkmode : mode }">
                                     <li @click="chiudiChat">Chiudi Chat</li>
                                     <li @click="deleteAll">Cancella Chat</li>
                                 </ul>
