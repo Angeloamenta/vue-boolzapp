@@ -204,6 +204,17 @@ var app = new Vue({
 
     hideShoww : function () {
       this.showw = true
+    },
+
+    deleteChat : function () {
+    console.log(this.contacts[this.cont]);
+    
+    console.log(this.contacts);
+    if (this.contacts > 0) {
+      this.contacts.splice(this.cont, 1)
+      console.log("ciao");
+    }
+      
     }
   
    },

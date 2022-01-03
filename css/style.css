@@ -376,6 +376,7 @@ background-color: #EDEDED;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+    z-index: 999;
 }
 .my-message {
     align-self: flex-end;

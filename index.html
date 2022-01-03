@@ -70,7 +70,8 @@
                     </div>
                 </div>
                 <!-- contacts -->
-                <div class="contacts">
+                <div v-if="contacts < 0" ></div>
+                <div v-else class="contacts">
                     <ul>
                         <li v-if="contt.name.toLowerCase().includes(searchcontact)" @click="select(index)" v-for="(contt, index) in contacts">
                             <div :class="{ darkmode : mode }" class="contact-img">
@@ -112,10 +113,11 @@
                             <li><i class="fa-solid fa-magnifying-glass"></i></li>
                             <li><i class="fa-solid fa-paperclip"></i></li>
                             <li ><i class="fa-solid fa-ellipsis-vertical"@click="showw = !showw" ></i>
-                            <div :class="{ none : showw }" class="dropdown">
+                            <div @mouseleave="hideShoww" :class="{ none : showw }" class="dropdown">
                                 <ul @mouseleave="hideShoww" :class="{ darkmode : mode }">
                                     <li @click="chiudiChat">Chiudi Chat</li>
-                                    <li @click="deleteAll">Cancella Chat</li>
+                                    <li @click="deleteAll">Cancella Messaggi</li>
+                                    <li @click="deleteChat">Elimina Chat</li>
                                 </ul>
 
                             </div>
