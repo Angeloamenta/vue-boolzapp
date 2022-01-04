@@ -5,6 +5,29 @@
 var app = new Vue({
   el: '#app',
   data: {
+    smile: true,
+    emoji: [
+      "😴",
+      "😄",
+      "😃",
+      "⛔",
+      "🐱",
+      "🐶",
+      "👽",
+      "🤖",
+      "🧑",
+      "🌳",
+      "👩",
+      "💵",
+      "💰",
+      "🥦",
+      "🥬",
+      "🍅",
+      "🥒",
+      "🍩",
+      "🥕",
+      "💻"
+    ],
     zoom: false,
     arrayRisposte: ["va bene", "come preferisci", "no, grazie", "direi di no"],
     mode: false,
@@ -212,6 +235,14 @@ var app = new Vue({
     console.log(this.contacts);
     this.contacts.splice(this.cont, 1);
     this.cont= null;
+    },
+
+    addEmoji : function (index) {
+      this.message += this.emoji[index]
+    },
+
+    hideEmoji : function () {
+      this.smile = true
     }
   
    },
@@ -226,7 +257,7 @@ var app = new Vue({
       arraySlpash.push(obb)
       
       
-    }, 2000);
+    }, 0000);
     
     
     console.log(this.cont);
