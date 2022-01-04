@@ -70,8 +70,8 @@
                     </div>
                 </div>
                 <!-- contacts -->
-                <div v-if="contacts < 0" ></div>
-                <div v-else class="contacts">
+                
+                <div v-if="contacts.length  > 0" class="contacts">
                     <ul>
                         <li v-if="contt.name.toLowerCase().includes(searchcontact)" @click="select(index)" v-for="(contt, index) in contacts">
                             <div :class="{ darkmode : mode }" class="contact-img">
@@ -91,6 +91,7 @@
                         </li>
                     </ul>
                 </div>
+                <div v-else>Nessuna chat disponibile</div>
             </div>
             <!-- dx -->
             <div :class="{ darkmode : mode }" class="inner-dx">
@@ -125,8 +126,9 @@
                         </ul>
                     </div>
                 </div>
+                
                 <!-- messages -->
-                <div :class="{ darkmode : mode }" class="try">
+                <div v-if="contacts.length  > 0" :class="{ darkmode : mode }" class="try">
                     <div  v-if="cont == null" class="welcome">
                        <h2> BoolzApp <i class="fa-solid fa-paper-plane"></i></h2>
                        <p>Seleziona la tua chat</p>   
@@ -152,6 +154,10 @@
                         </div>
                     </div>
                     
+                </div>
+                <div v-else class="welcome">
+                    <h2> BoolzApp <i class="fa-solid fa-paper-plane"></i></h2>
+                       <p>Non ci sono conversazioni</p> 
                 </div>
 
                 <!-- bottom-bar-dx -->
