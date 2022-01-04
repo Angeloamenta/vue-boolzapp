@@ -370,7 +370,6 @@ background-color: #EDEDED;
     height: 100px;
     background-color: white;
     font-size: 0.9em;
-    padding: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -384,15 +383,25 @@ background-color: #EDEDED;
     background-color: white;
 }
 
-.menu-m > li {
-    height: 50%;
+.menu-m ul {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu-m ul li {
+    width: 100%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.menu-m > li:hover {
+
+.menu-m ul li:hover {
     background-color: gray;
 }
 
