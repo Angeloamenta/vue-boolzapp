@@ -29,7 +29,7 @@ var app = new Vue({
       "💻"
     ],
     zoom: false,
-    arrayRisposte: ["va bene", "come preferisci", "no, grazie", "direi di no"],
+    arrayRisposte: ["va bene", "come preferisci", "no, grazie", "direi di no","😴", "😃", "🐱", "💻"],
     mode: false,
     showw: true,
     array1: [],

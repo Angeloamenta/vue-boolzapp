@@ -430,7 +430,10 @@ background-color: #EDEDED;
     position:relative ;
 }
 
-
+.bt-bar-sx i:hover,
+.bt-bar-dx i:hover {
+    color:#009687;
+}
 
 .bt-bar-sx i,
 .bt-bar-dx i {
