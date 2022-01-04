@@ -208,10 +208,10 @@ var app = new Vue({
 
     deleteChat : function () {
     console.log(this.contacts[this.cont]);
-    this.contacts.splice(this.cont ,1)
+    // this.contacts.splice(this.cont, 1)
     console.log(this.contacts);
-   
-      
+    this.contacts.splice(this.cont, 1);
+    this.cont= null;
     }
   
    },
