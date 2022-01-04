@@ -226,7 +226,7 @@ var app = new Vue({
       arraySlpash.push(obb)
       
       
-    }, 0000);
+    }, 2000);
     
     
     console.log(this.cont);

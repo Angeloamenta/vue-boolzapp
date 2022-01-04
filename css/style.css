@@ -460,7 +460,7 @@ background-color: #EDEDED;
     left: 0;
     background-color: #009687;
     position: absolute;
-    z-index: 999;
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
