@@ -167,7 +167,7 @@
                     <div class="bt-bar-sx">
                         <i @click="smile = !smile" class="fa-regular fa-face-smile"></i>
                         <div :class="{ none : smile }" class="emoji-div" >
-                            <ul >
+                            <ul :class="{ darkmode : mode }" >
                                 <li @click="addEmoji(index)" v-for="(emo, index) in emoji">{{emo}}</li>
                                 
                             </ul>

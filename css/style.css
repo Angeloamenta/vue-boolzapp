@@ -544,20 +544,26 @@ background-color: #EDEDED;
     left: 0px;
     width: 200px;
     height: 100px;
+    background-color: white;
 }
 
 .emoji-div ul {
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    cursor: pointer;cursor: pointer;
+    
 }
 
 .emoji-div ul li {
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.emoji-div ul li:hover {
+    background-color: gray;
 }
 
 /* animation loading */
