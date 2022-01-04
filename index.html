@@ -109,7 +109,7 @@
                         </div>
                         <div v-else></div>
                     </div>
-                    <div class="bar-dx-buttons">
+                    <div @mouseleave="hideShoww" class="bar-dx-buttons">
                         <ul class="dx-list">
                             <li><i class="fa-solid fa-magnifying-glass"></i></li>
                             <li><i class="fa-solid fa-paperclip"></i></li>
@@ -128,7 +128,7 @@
                 </div>
                 
                 <!-- messages -->
-                <div v-if="contacts.length  > 0" :class="{ darkmode : mode }" class="try">
+                <div v-if="contacts.length  > 0" :class="{ darkmode : mode }" class="try"  >
                     <div  v-if="cont == null" class="welcome">
                        <h2> BoolzApp <i class="fa-solid fa-paper-plane"></i></h2>
                        <p>Seleziona la tua chat</p>   
@@ -137,12 +137,12 @@
                         <!-- v-if="contacts[index].visible == true" -->
                         <div 
                          v-for="(mex, index) in contacts[cont].messages" 
-                         
+                        
                          class="bubble" 
                          :class="(mex.status == 'sent') ? 'my-message' : 'answer' "
                          >
                             <div :class="{ darktext : mode }" class="bubble-txt">{{mex.text}}</div>
-                            <div  class="menu-mini">
+                            <div @mouseleave="hideMenu(index)" class="menu-mini">
                                 <i :class="{ darktext : mode }" @mouseover="showMenu(index)"  @click="hideMenu" class="fa-solid fa-angle-down">
                                 </i>
                                 <div @mouseleave="hideMenu(index)" class="menu-m" :class="(index == currentmessage ? '' : 'none')">
