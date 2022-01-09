@@ -5,6 +5,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    arrayCopy: null,
     smile: true,
     emoji: [
       "😴",
@@ -206,7 +207,13 @@ var app = new Vue({
   },
   
   deleteAll : function () {
-    this.contacts[this.cont].messages.splice(0, this.contacts[this.cont].messages.length);
+    
+    if (this.cont == null) {
+      console.log("minore");
+    }else {
+
+       this.contacts[this.cont].messages.splice(0, this.contacts[this.cont].messages.length);
+    }
   },
 
   showMenu : function (index) {
@@ -243,7 +250,7 @@ var app = new Vue({
 
     hideEmoji : function () {
       this.smile = true
-    }
+    },
   
    },
 
@@ -257,11 +264,14 @@ var app = new Vue({
       arraySlpash.push(obb)
       
       
-    }, 0000);
+    }, 2000);
     
     
     console.log(this.cont);
-   
+
+    this.arrayCopy = this.contacts;
+    console.log("copia", this.arrayCopy);
+
   }
   
 })
